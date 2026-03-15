@@ -283,33 +283,46 @@ function validateForm() {
 });
 
 /* Form submission handler */
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', function (e) {
   e.preventDefault();
   formSuccess.classList.remove('show');
 
   if (!validateForm()) return;
 
-  /* Simulate async send (replace with a real API call or mailto link) */
   submitBtn.disabled = true;
-  submitBtn.textContent = 'Sending…';
+  submitBtn.textContent = "Sending...";
 
-  setTimeout(() => {
-    /* Reset form */
-    contactForm.reset();
-    submitBtn.disabled = false;
-    submitBtn.innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+  const templateParams = {
+    from_name: document.getElementById("name").value,
+    from_email: document.getElementById("email").value,
+    message: document.getElementById("message").value,
+  };
+
+  emailjs.send("service_pwa2wsm", "template_kkdfz8p", templateParams)
+    .then(function () {
+
+      contactForm.reset();
+
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+      viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="22" y1="2" x2="11" y2="13"/>
+      <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+      </svg>
       Send Message
-    `;
+      `;
 
-    /* Show success message */
-    formSuccess.classList.add('show');
+      formSuccess.classList.add("show");
 
-    /* Auto-hide success message after 5 seconds */
-    setTimeout(() => {
-      formSuccess.classList.remove('show');
-    }, 5000);
-  }, 1200);
+    }, function (error) {
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Send Message";
+      alert("Failed to send message. Please try again.");
+
+    });
 });
 
 /* ──────────────────────────────────────────────────────────────
