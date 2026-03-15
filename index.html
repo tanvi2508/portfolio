@@ -1,30 +1,19 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Tanvi Verma – Flutter Developer & Mobile App Engineer. Building scalable, high-performance cross-platform apps for Android and iOS." />
   <title>Tanvi Verma | Flutter Developer & Mobile App Engineer</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-
-  <!-- Stylesheet -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;1,6..12,400&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-
 </head>
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-<script>
-  (function () {
-    emailjs.init("2hGPC0SD2rKtkA4qI"); 
-  })();
-</script>
-
+<script>(function(){ emailjs.init("2hGPC0SD2rKtkA4qI"); })();</script>
 
 <body>
 
@@ -35,7 +24,6 @@
         <!-- <span class="logo-bracket">&lt;</span>TV<span class="logo-bracket">/&gt;</span> -->
       </a>
 
-      <!-- Desktop Nav Links -->
       <nav class="nav-links" id="nav-links">
         <a href="#home"       class="nav-link active">Home</a>
         <a href="#about"      class="nav-link">About</a>
@@ -46,33 +34,34 @@
         <a href="#contact"    class="nav-link">Contact</a>
       </nav>
 
-      <!-- Mobile Hamburger -->
-      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-right">
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
+          <!-- Moon (shown in light mode) -->
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <!-- Sun (shown in dark mode) -->
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <!-- ===== HERO SECTION ===== -->
+  <!-- ===== HERO ===== -->
   <section class="hero" id="home">
     <div class="hero-bg-grid"></div>
     <div class="hero-container">
 
-      <!-- Profile Photo -->
       <div class="hero-photo-wrap fade-in">
         <div class="photo-ring">
-          <img
-            src="assets/images/profile.JPG"
-            alt="Tanvi Verma – Flutter Developer & Mobile App Engineer"
-            class="hero-photo"
-          />
+          <img src="assets/images/profile.JPG" alt="Tanvi Verma – Flutter Developer" class="hero-photo" />
         </div>
-        <div class="status-dot" title="Open to opportunities"></div>
+        <div class="status-dot" title="Open to opportunities">Available to Work</div>
       </div>
 
-      <!-- Hero Text -->
       <div class="hero-text fade-in delay-1">
         <p class="hero-greeting">Hi there, I'm</p>
         <h1 class="hero-name">Tanvi Verma</h1>
@@ -86,7 +75,6 @@
           using modern development workflows — from architecture to App Store.
         </p>
 
-        <!-- CTA Buttons -->
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
@@ -102,7 +90,6 @@
           </a>
         </div>
 
-        <!-- Tech Stack Pills -->
         <div class="hero-stack">
           <span class="stack-pill">Flutter</span>
           <span class="stack-pill">Dart</span>
@@ -116,49 +103,33 @@
       </div>
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="scroll-indicator">
+    <!-- Scroll Indicator — clicking scrolls to #about -->
+    <a href="#about" class="scroll-indicator" id="scroll-indicator" aria-label="Scroll down">
       <div class="scroll-mouse">
         <div class="scroll-wheel"></div>
       </div>
       <span>Scroll down</span>
-    </div>
+    </a>
   </section>
 
-  <!-- ===== ABOUT SECTION ===== -->
+  <!-- ===== ABOUT ===== -->
   <section class="about section" id="about">
     <div class="container">
       <div class="section-header reveal">
-        <!-- <span class="section-tag">// About Me</span> -->
-        <h2 class="section-title">A Little About Tanvi</h2>
+        <h2 class="section-title">Who I Am</h2>
       </div>
-
       <div class="about-grid">
         <div class="about-text reveal">
-          <p>
-            I'm a <strong>Flutter Developer and Mobile App Engineer</strong> with 4+ years of experience
-            building scalable, high-performance cross-platform apps for Android and iOS. I work
-            end-to-end — from architecture planning and REST API integration to Play Store &amp; App
-            Store deployment and client coordination.
-          </p>
-          <p>
-            Proficient in Dart, Kotlin, and Java, I bring hands-on experience with GetX, Riverpod,
-            and Provider state management, Hive for offline-first storage, and Firebase services across
-            production apps at Proeffico Solutions.
-          </p>
-          <p>
-            I'm also an active practitioner of <strong>AI-assisted development</strong> — using tools
-            like Lovable, Claude, and Gemini Flash to go from idea to working Flutter prototype in
-            hours. I believe in building reliable software with clean structure and strong performance.
-          </p>
-
+          <p>I'm a <strong>Flutter Developer and Mobile App Engineer</strong> with 4+ years of experience turning ideas into scalable, high-performance mobile apps for both Android and iOS. From planning the architecture to integrating REST APIs and launching apps on the Play Store and App Store, I enjoy building products that are not only functional but also reliable and user-focused.</p>
+          <p>My core stack includes Dart, Kotlin, and Java, and I've built production-grade apps using Flutter with state management solutions like GetX, Riverpod, and Provider. I also work extensively with Hive for offline-first experiences and Firebase services to power real-world applications developed at Proeffico Solutions.</p>
+          <p>What excites me most is exploring smarter ways to build. I actively practice <strong>AI-assisted development</strong>, using tools like Lovable, Claude, and Gemini Flash to transform ideas into working Flutter prototypes within hours. I believe great apps come from clean architecture, thoughtful design, and a constant curiosity to improve.</p>
           <div class="about-stats">
             <div class="stat-card reveal">
-              <span class="stat-number">4+</span>
+              <span class="stat-number">3+</span>
               <span class="stat-label">Years Experience</span>
             </div>
             <div class="stat-card reveal delay-1">
-              <span class="stat-number">10+</span>
+              <span class="stat-number">30+</span>
               <span class="stat-label">Apps Shipped</span>
             </div>
             <div class="stat-card reveal delay-2">
@@ -171,51 +142,24 @@
         <div class="about-skills reveal delay-1">
           <h3 class="skills-heading">Core Technologies</h3>
           <div class="skill-list">
-            <div class="skill-item">
-              <span class="skill-name">Flutter / Dart</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">GetX / Riverpod / Provider</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Android (Kotlin / Java)</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">REST APIs (Dio / HTTP)</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Firebase (Auth, Firestore, Crashlytics)</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="84"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Hive / SQLite / SharedPreferences</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Play Store &amp; App Store Deployment</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Clean Architecture / MVVM / MVC</span>
-              <div class="skill-bar"><div class="skill-fill" data-width="86"></div></div>
-            </div>
+            <div class="skill-item"><span class="skill-name">Flutter / Dart</span><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div></div>
+            <div class="skill-item"><span class="skill-name">GetX / Riverpod / Provider</span><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
+            <div class="skill-item"><span class="skill-name">Android (Kotlin / Java)</span><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
+            <div class="skill-item"><span class="skill-name">REST APIs (Dio / HTTP)</span><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
+            <div class="skill-item"><span class="skill-name">Firebase (Auth, Firestore, Crashlytics)</span><div class="skill-bar"><div class="skill-fill" data-width="84"></div></div></div>
+            <div class="skill-item"><span class="skill-name">Hive / SQLite / SharedPreferences</span><div class="skill-bar"><div class="skill-fill" data-width="82"></div></div></div>
+            <div class="skill-item"><span class="skill-name">Play Store &amp; App Store Deployment</span><div class="skill-bar"><div class="skill-fill" data-width="88"></div></div></div>
+            <div class="skill-item"><span class="skill-name">Clean Architecture / MVVM / MVC</span><div class="skill-bar"><div class="skill-fill" data-width="86"></div></div></div>
           </div>
         </div>
       </div>
 
-      <!-- AI Tools Section -->
       <div class="ai-tools-section reveal">
         <h3 class="ai-tools-heading">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
           AI-Assisted Development Workflow
         </h3>
-        <p class="ai-tools-desc">
-          I apply vibe coding methodology — using AI tools to scaffold, prototype, and ship Flutter apps faster without compromising code quality.
-        </p>
+        <p class="ai-tools-desc">I apply vibe coding methodology — using AI tools to scaffold, prototype, and ship Flutter apps faster without compromising code quality.</p>
         <div class="ai-tools-grid">
           <span class="ai-pill">Lovable</span>
           <span class="ai-pill">Emergent</span>
@@ -228,246 +172,142 @@
     </div>
   </section>
 
-  <!-- ===== WHAT I BUILD SECTION ===== -->
+  <!-- ===== WHAT I BUILD ===== -->
   <section class="build section" id="build">
     <div class="container">
       <div class="section-header reveal">
-        <!-- <span class="section-tag">// Expertise</span> -->
         <h2 class="section-title">What I Build</h2>
       </div>
-
       <div class="build-grid">
-
-        <!-- Card 1 -->
         <div class="build-card reveal">
-          <div class="build-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-          </div>
+          <div class="build-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
           <h3>Cross-Platform Flutter Apps</h3>
           <p>Single-codebase applications that run natively on both iOS and Android — with platform-specific UX where it matters, built using Flutter and Dart.</p>
         </div>
-
-        <!-- Card 2 -->
         <div class="build-card reveal delay-1">
-          <div class="build-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
+          <div class="build-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
           <h3>Production-Ready Mobile Apps</h3>
           <p>End-to-end mobile products — from architecture and REST API integration to Play Store &amp; App Store publishing with CI/CD and crash monitoring.</p>
         </div>
-
-        <!-- Card 3 -->
         <div class="build-card reveal delay-2">
-          <div class="build-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
-          </div>
+          <div class="build-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div>
           <h3>Scalable Mobile Architecture</h3>
           <p>Clean layered architectures — GetX, Riverpod, MVVM, Clean Architecture — that separate concerns clearly and grow gracefully with the product.</p>
         </div>
-
-        <!-- Card 4 -->
         <div class="build-card reveal delay-1">
-          <div class="build-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
+          <div class="build-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
           <h3>Rapid Prototyping with AI</h3>
           <p>From idea to working Flutter prototype in hours using AI-assisted development — Lovable, Emergent, Claude — for fast scaffolding and product validation.</p>
         </div>
-
-        <!-- Card 5 -->
         <div class="build-card reveal delay-2">
-          <div class="build-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-          </div>
+          <div class="build-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
           <h3>Enterprise Mobile Modules</h3>
           <p>VMS, HRMS, and attendance platforms — complex enterprise modules with real-time data sync, face recognition integration, and role-based access.</p>
         </div>
-
-        <!-- Card 6 -->
         <div class="build-card reveal delay-3">
-          <div class="build-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
+          <div class="build-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
           <h3>Offline-First &amp; Resilient Apps</h3>
           <p>Apps built for real-world conditions — Hive local database, background sync, Android 13/14 compatibility, and smooth performance on all devices.</p>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ===== FEATURED PROJECTS SECTION ===== -->
+  <!-- ===== PROJECTS ===== -->
   <section class="projects section" id="projects">
     <div class="container">
       <div class="section-header reveal">
-        <!-- <span class="section-tag">// Projects</span> -->
         <h2 class="section-title">Featured Projects</h2>
         <p class="section-subtitle">A selection of mobile applications I've designed and built.</p>
       </div>
-
       <div class="projects-grid">
-
-        <!-- Project 1 -->
         <article class="project-card reveal">
           <div class="project-header">
-            <div class="project-icon-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/tanvi2508" target="_blank" rel="noopener noreferrer" class="project-link" title="View on GitHub" aria-label="View on GitHub">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-            </div>
+            <div class="project-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg></div>
+            <div class="project-links"><a href="https://github.com/tanvi2508" target="_blank" rel="noopener noreferrer" class="project-link" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div>
           </div>
           <h3 class="project-title">On-Demand Service Booking App</h3>
           <p class="project-desc">A Snabbit-inspired service booking app with category browsing, real-time provider availability, slot booking, and in-app status tracking. GetX for state management, Dio for JWT-authenticated API calls with token refresh handling.</p>
-          <div class="project-tags">
-            <span class="tag">Flutter</span>
-            <span class="tag">Dart</span>
-            <span class="tag">GetX</span>
-            <span class="tag">Dio</span>
-            <span class="tag">REST API</span>
-          </div>
+          <div class="project-tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">GetX</span><span class="tag">Dio</span><span class="tag">REST API</span></div>
         </article>
 
-        <!-- Project 2 -->
         <article class="project-card reveal delay-1">
           <div class="project-header">
-            <div class="project-icon-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/tanvi2508" target="_blank" rel="noopener noreferrer" class="project-link" title="View on GitHub" aria-label="View on GitHub">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-            </div>
+            <div class="project-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+            <div class="project-links"><a href="https://github.com/tanvi2508" target="_blank" rel="noopener noreferrer" class="project-link" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div>
           </div>
           <h3 class="project-title">Netflix-Style Video Streaming App</h3>
           <p class="project-desc">Native Android streaming app in Java with ExoPlayer for adaptive video playback — buffering control, seekbar, fullscreen mode, and background audio. RecyclerView carousels, ViewPager2 banners, and Glide for optimised image loading.</p>
-          <div class="project-tags">
-            <span class="tag">Android</span>
-            <span class="tag">Java</span>
-            <span class="tag">ExoPlayer</span>
-            <span class="tag">RecyclerView</span>
-            <span class="tag">Glide</span>
-          </div>
+          <div class="project-tags"><span class="tag">Android</span><span class="tag">Java</span><span class="tag">ExoPlayer</span><span class="tag">RecyclerView</span><span class="tag">Glide</span></div>
         </article>
 
-        <!-- Project 3 -->
         <article class="project-card reveal delay-2">
           <div class="project-header">
-            <div class="project-icon-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/tanvi2508" target="_blank" rel="noopener noreferrer" class="project-link" title="View on GitHub" aria-label="View on GitHub">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-            </div>
+            <div class="project-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <div class="project-links"><a href="https://github.com/tanvi2508" target="_blank" rel="noopener noreferrer" class="project-link" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div>
           </div>
           <h3 class="project-title">WhatsApp Clone</h3>
           <p class="project-desc">Native Android messaging app in Java with Firebase Realtime Database for instant message delivery, Firebase Auth for login, and a RecyclerView-based chat UI with read receipts and contact management.</p>
-          <div class="project-tags">
-            <span class="tag">Android</span>
-            <span class="tag">Java</span>
-            <span class="tag">Firebase Realtime DB</span>
-            <span class="tag">Firebase Auth</span>
-          </div>
+          <div class="project-tags"><span class="tag">Android</span><span class="tag">Java</span><span class="tag">Firebase Realtime DB</span><span class="tag">Firebase Auth</span></div>
         </article>
 
-        <!-- Project 4 -->
         <article class="project-card reveal delay-3">
           <div class="project-header">
-            <div class="project-icon-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/tanvi2508" target="_blank" rel="noopener noreferrer" class="project-link" title="View on GitHub" aria-label="View on GitHub">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              </a>
-            </div>
+            <div class="project-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <div class="project-links"><a href="https://github.com/tanvi2508" target="_blank" rel="noopener noreferrer" class="project-link" title="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></div>
           </div>
           <h3 class="project-title">Student Management System</h3>
           <p class="project-desc">Cross-platform Flutter app with Riverpod state management and Hive local storage — full CRUD operations, offline-first data persistence, search and filter functionality for student records.</p>
-          <div class="project-tags">
-            <span class="tag">Flutter</span>
-            <span class="tag">Riverpod</span>
-            <span class="tag">Hive</span>
-            <span class="tag">SQLite</span>
-            <span class="tag">CRUD</span>
-          </div>
+          <div class="project-tags"><span class="tag">Flutter</span><span class="tag">Riverpod</span><span class="tag">Hive</span><span class="tag">SQLite</span><span class="tag">CRUD</span></div>
         </article>
-
       </div>
     </div>
   </section>
 
-  <!-- ===== HOW I BUILD PRODUCTS ===== -->
+  <!-- ===== APPROACH ===== -->
   <section class="approach section" id="approach">
     <div class="container">
       <div class="section-header reveal">
-        <!-- <span class="section-tag">// Workflow</span> -->
         <h2 class="section-title">How I Build Products</h2>
         <p class="section-subtitle">A repeatable process from concept to production.</p>
       </div>
-
       <div class="workflow-steps">
-        <!-- Step 1 -->
         <div class="step reveal">
           <div class="step-number">01</div>
           <div class="step-content">
-            <div class="step-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
-            </div>
+            <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg></div>
             <h3>Idea &amp; Scope</h3>
             <p>I start by understanding the problem space — who uses the app, what they need, and where complexity hides. I translate business goals into clear technical specs before writing a line of code.</p>
           </div>
         </div>
-
         <div class="step-connector reveal"></div>
-
-        <!-- Step 2 -->
         <div class="step reveal delay-1">
           <div class="step-number">02</div>
           <div class="step-content">
-            <div class="step-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
-            </div>
+            <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div>
             <h3>Architecture</h3>
             <p>I design the app structure — state management strategy (GetX / Riverpod), data layer, API contracts, and folder organisation — before building features, so the codebase scales cleanly.</p>
           </div>
         </div>
-
         <div class="step-connector reveal delay-1"></div>
-
-        <!-- Step 3 -->
         <div class="step reveal delay-2">
           <div class="step-number">03</div>
           <div class="step-content">
-            <div class="step-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </div>
+            <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
             <h3>Prototype</h3>
             <p>I leverage AI tools (Lovable, Claude, Gemini Flash) to scaffold UI fast and validate the core flow early. Speed here is intentional — prototype fast, learn faster, iterate with confidence.</p>
           </div>
         </div>
-
         <div class="step-connector reveal delay-2"></div>
-
-        <!-- Step 4 -->
         <div class="step reveal delay-3">
           <div class="step-number">04</div>
           <div class="step-content">
-            <div class="step-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </div>
+            <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
             <h3>Production</h3>
             <p>I harden the prototype into a production app — Dio interceptors, token refresh, Firebase Crashlytics monitoring, staged Play Store rollouts, and App Store submission. Reliable apps, every time.</p>
           </div>
         </div>
       </div>
-
-      <!-- Approach Summary -->
       <div class="approach-summary reveal">
         <div class="quote-block">
           <p>"I focus on building reliable mobile apps with clean structure and strong performance. Every architectural decision pays dividends as the product scales — and AI tooling helps me get there faster."</p>
@@ -477,111 +317,53 @@
     </div>
   </section>
 
-  <!-- ===== EXPERIENCE SECTION ===== -->
+  <!-- ===== EXPERIENCE ===== -->
   <section class="experience section" id="experience">
     <div class="container">
       <div class="section-header reveal">
-        <!-- <span class="section-tag">// Career</span> -->
         <h2 class="section-title">Experience</h2>
       </div>
-
       <div class="timeline">
-
-        <!-- Entry 1 -->
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
-            <div class="timeline-meta">
-              <span class="timeline-role">Software Development Engineer II (SDE-2)</span>
-              <span class="timeline-period">Jan 2024 – Present</span>
-            </div>
+            <div class="timeline-meta"><span class="timeline-role">Software Development Engineer II (SDE-2)</span><span class="timeline-period">Jan 2024 – Present</span></div>
             <p class="timeline-company">Proeffico Solutions Pvt. Ltd. · Noida, UP</p>
-            <p class="timeline-desc">
-              Architect and lead cross-platform Flutter applications for Android and iOS, owning the full lifecycle from requirement analysis to production deployment. Build scalable app architecture using GetX and Riverpod, integrate REST APIs via Dio with interceptors and token refresh logic, and manage end-to-end releases on Google Play Store and Apple App Store via Firebase Crashlytics.
-            </p>
-            <div class="timeline-tags">
-              <span class="tag">Flutter</span>
-              <span class="tag">GetX</span>
-              <span class="tag">Riverpod</span>
-              <span class="tag">Dio</span>
-              <span class="tag">Firebase</span>
-              <span class="tag">Play Store</span>
-            </div>
+            <p class="timeline-desc">Architect and lead cross-platform Flutter applications for Android and iOS, owning the full lifecycle from requirement analysis to production deployment. Build scalable app architecture using GetX and Riverpod, integrate REST APIs via Dio with interceptors and token refresh logic, and manage end-to-end releases on Google Play Store and Apple App Store via Firebase Crashlytics.</p>
+            <div class="timeline-tags"><span class="tag">Flutter</span><span class="tag">GetX</span><span class="tag">Riverpod</span><span class="tag">Dio</span><span class="tag">Firebase</span><span class="tag">Play Store</span></div>
           </div>
         </div>
-
-        <!-- Entry 2 -->
         <div class="timeline-item reveal delay-1">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
-            <div class="timeline-meta">
-              <span class="timeline-role">Associate Software Engineer</span>
-              <span class="timeline-period">Jul 2023 – Jan 2024</span>
-            </div>
+            <div class="timeline-meta"><span class="timeline-role">Associate Software Engineer</span><span class="timeline-period">Jul 2023 – Jan 2024</span></div>
             <p class="timeline-company">Proeffico Solutions Pvt. Ltd. · Noida, UP</p>
-            <p class="timeline-desc">
-              Developed enterprise mobile modules for VMS and HRMS platforms — attendance tracking, live location tracking, leave management, and employee self-service. Built Notice Board, Resource Bank, To-Do, and Service Request modules with full CRUD and real-time sync. Integrated AI-powered face recognition attendance with Flutter mobile interface.
-            </p>
-            <div class="timeline-tags">
-              <span class="tag">Flutter</span>
-              <span class="tag">Dart</span>
-              <span class="tag">HRMS</span>
-              <span class="tag">Firebase</span>
-              <span class="tag">Face Recognition</span>
-            </div>
+            <p class="timeline-desc">Developed enterprise mobile modules for VMS and HRMS platforms — attendance tracking, live location tracking, leave management, and employee self-service. Built Notice Board, Resource Bank, To-Do, and Service Request modules with full CRUD and real-time sync. Integrated AI-powered face recognition attendance with Flutter mobile interface.</p>
+            <div class="timeline-tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">HRMS</span><span class="tag">Firebase</span><span class="tag">Face Recognition</span></div>
           </div>
         </div>
-
-        <!-- Entry 3 -->
         <div class="timeline-item reveal delay-2">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
-            <div class="timeline-meta">
-              <span class="timeline-role">Associate Software Engineer Intern</span>
-              <span class="timeline-period">Mar 2022 – Jul 2023</span>
-            </div>
+            <div class="timeline-meta"><span class="timeline-role">Associate Software Engineer Intern</span><span class="timeline-period">Mar 2022 – Jul 2023</span></div>
             <p class="timeline-company">Proeffico Solutions Pvt. Ltd. · Noida, UP</p>
-            <p class="timeline-desc">
-              Contributed to Android and Flutter feature development using Kotlin, Java, and Dart for production mobile applications. Supported bug fixing, performance profiling, Play Store deployments, and Agile ceremonies under senior developer mentorship.
-            </p>
-            <div class="timeline-tags">
-              <span class="tag">Android</span>
-              <span class="tag">Kotlin</span>
-              <span class="tag">Java</span>
-              <span class="tag">Flutter</span>
-              <span class="tag">Agile</span>
-            </div>
+            <p class="timeline-desc">Contributed to Android and Flutter feature development using Kotlin, Java, and Dart for production mobile applications. Supported bug fixing, performance profiling, Play Store deployments, and Agile ceremonies under senior developer mentorship.</p>
+            <div class="timeline-tags"><span class="tag">Android</span><span class="tag">Kotlin</span><span class="tag">Java</span><span class="tag">Flutter</span><span class="tag">Agile</span></div>
           </div>
         </div>
-
-        <!-- Entry 4 -->
         <div class="timeline-item reveal delay-3">
           <div class="timeline-dot"></div>
           <div class="timeline-card">
-            <div class="timeline-meta">
-              <span class="timeline-role">Android Developer Intern</span>
-              <span class="timeline-period">Sep 2021 – Oct 2021</span>
-            </div>
+            <div class="timeline-meta"><span class="timeline-role">Android Developer Intern</span><span class="timeline-period">Sep 2021 – Oct 2021</span></div>
             <p class="timeline-company">LetsGrowMore · Remote</p>
-            <p class="timeline-desc">
-              Developed Android application features using Java and Android SDK — implemented UI components and managed activity lifecycle for production-level learning projects.
-            </p>
-            <div class="timeline-tags">
-              <span class="tag">Android</span>
-              <span class="tag">Java</span>
-              <span class="tag">Android SDK</span>
-            </div>
+            <p class="timeline-desc">Developed Android application features using Java and Android SDK — implemented UI components and managed activity lifecycle for production-level learning projects.</p>
+            <div class="timeline-tags"><span class="tag">Android</span><span class="tag">Java</span><span class="tag">Android SDK</span></div>
           </div>
         </div>
-
       </div>
-
-      <!-- Education -->
       <div class="education-block reveal">
         <div class="edu-card">
-          <div class="edu-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          </div>
+          <div class="edu-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
           <div>
             <h4>B.Tech — Computer Science &amp; Engineering</h4>
             <p>H.R. Institute of Technology, Morta, Ghaziabad &nbsp;·&nbsp; 2019 – 2023</p>
@@ -591,104 +373,63 @@
     </div>
   </section>
 
-  <!-- ===== CONTACT SECTION ===== -->
+  <!-- ===== CONTACT ===== -->
   <section class="contact section" id="contact">
     <div class="container">
       <div class="section-header reveal">
-        <!-- <span class="section-tag">// Contact</span> -->
         <h2 class="section-title">Get In Touch</h2>
         <p class="section-subtitle">Have a project in mind or want to connect? I'd love to hear from you.</p>
       </div>
-
       <div class="contact-grid">
-
-        <!-- Contact Info -->
         <div class="contact-info reveal">
           <div class="contact-item">
-            <div class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div>
-              <h4>Email</h4>
-              <a href="mailto:tanviverma2508@gmail.com">tanviverma2508@gmail.com</a>
-            </div>
+            <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><h4>Email</h4><a href="mailto:tanviverma2508@gmail.com">tanviverma2508@gmail.com</a></div>
           </div>
-
           <div class="contact-item">
-            <div class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </div>
-            <div>
-              <h4>LinkedIn</h4>
-              <a href="https://www.linkedin.com/in/tanvi-verma-955134201/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/tanvi-verma-955134201/</a>
-            </div>
+            <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+            <div><h4>LinkedIn</h4><a href="https://www.linkedin.com/in/tanvi-verma-955134201/" target="_blank" rel="noopener noreferrer">linkedin.com/in/tanvi-verma</a></div>
           </div>
-
           <div class="contact-item">
-            <div class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </div>
-            <div>
-              <h4>GitHub</h4>
-              <a href="https://github.com/tanvi2508" target="_blank" rel="noopener noreferrer">github.com/tanvi2508</a>
-            </div>
+            <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div>
+            <div><h4>GitHub</h4><a href="https://github.com/tanvi2508" target="_blank" rel="noopener noreferrer">github.com/tanvi2508</a></div>
           </div>
-
           <div class="contact-item">
-            <div class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <h4>Location</h4>
-              <span>Ghaziabad, UP, India · Open to Remote</span>
-            </div>
+            <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><h4>Location</h4><span>Ghaziabad, UP, India · Open to Remote</span></div>
           </div>
-
-          <!-- Social Icons -->
           <div class="social-links">
-            <a href="https://github.com/tanvi2508" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </a>
-            <a href="https://www.linkedin.com/in/tanvi-verma-955134201/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a href="mailto:tanviverma2508@gmail.com" class="social-icon" aria-label="Email">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </a>
+            <a href="https://github.com/tanvi2508" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+            <a href="https://www.linkedin.com/in/tanvi-verma-955134201/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+            <a href="mailto:tanviverma2508@gmail.com" class="social-icon" aria-label="Email"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
           </div>
         </div>
 
-        <!-- Contact Form -->
         <form class="contact-form reveal delay-1" id="contact-form" novalidate>
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" />
             <span class="form-error" id="name-error"></span>
           </div>
-
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" />
             <span class="form-error" id="email-error"></span>
           </div>
-
           <div class="form-group">
             <label for="message">Message</label>
             <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or just say hello..."></textarea>
             <span class="form-error" id="message-error"></span>
           </div>
-
           <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             Send Message
           </button>
-
           <div class="form-success" id="form-success" role="alert" aria-live="polite">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             Message sent! Tanvi will get back to you soon.
           </div>
         </form>
-
       </div>
     </div>
   </section>
@@ -696,19 +437,44 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
-      <p class="footer-text">
-        Designed &amp; built by <strong>Tanvi Verma</strong> · Flutter Developer &amp; Mobile App Engineer
-      </p>
+      <p class="footer-text">Designed &amp; built by <strong>Tanvi Verma</strong> · Flutter Developer &amp; Mobile App Engineer</p>
       <p class="footer-copy">&copy; 2025 Tanvi Verma · Ghaziabad, UP, India</p>
     </div>
   </footer>
 
-  <!-- Back to top button -->
   <button class="back-to-top" id="back-to-top" aria-label="Back to top">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
-  <!-- JavaScript -->
   <script src="script.js"></script>
+
+  <!-- Theme toggle + scroll fix inline -->
+  <script>
+    // ── Theme Toggle ──────────────────────────────────────────
+    const html = document.documentElement;
+    const toggleBtn = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+    if (saved) html.setAttribute('data-theme', saved);
+
+    toggleBtn.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    // ── Scroll Indicator Fix ──────────────────────────────────
+    // Make the scroll indicator always clickable and work correctly
+    const scrollIndicator = document.getElementById('scroll-indicator');
+    if (scrollIndicator) {
+      scrollIndicator.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.getElementById('about');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
